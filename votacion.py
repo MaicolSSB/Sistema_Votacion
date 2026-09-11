@@ -22,3 +22,16 @@ def ver_resultados():
         porcentaje = (cantidad / total_votos) * 100
         resultado += f"{candidato}: {cantidad} votos ({porcentaje:.2f}%)\n"
     return resultado
+
+def reiniciar_votacion():
+    if not votos:
+        return "No hay votos para reiniciar."
+    
+    with open("historial_votacion.txt", "a") as archivo:
+        archivo.write("--- Nueva Votación ---\n")
+        for votante, candidato in votos.items():
+            archivo.write(f"{votante} votó por {candidato}\n")
+        archivo.write("\n")
+    
+    votos.clear()
+    return "Votación reiniciada y historial guardado en 'historial_votacion.txt'."
