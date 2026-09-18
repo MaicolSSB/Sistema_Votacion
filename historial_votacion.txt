@@ -2,3 +2,7 @@
 Ana votó por Candidato A
 Luis votó por Candidato B
 
+--- Nueva Votación ---
+Ana votó por Candidato A
+Luis votó por Candidato B
+

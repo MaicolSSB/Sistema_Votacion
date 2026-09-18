@@ -21,6 +21,11 @@ def ver_resultados():
     for candidato, cantidad in conteo.items():
         porcentaje = (cantidad / total_votos) * 100
         resultado += f"{candidato}: {cantidad} votos ({porcentaje:.2f}%)\n"
+    
+    # --- MEJORA ADICIONAL: Anunciar al ganador ---
+    ganador = max(conteo, key=conteo.get)
+    resultado += f"\n¡El ganador es {ganador} con {conteo[ganador]} votos!"
+    
     return resultado
 
 def reiniciar_votacion():
